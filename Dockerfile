@@ -17,7 +17,7 @@ RUN apt-get update \
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5 \
  && echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.6.list \
  && apt-get update \
- && apt-get install mongodb-org \
+ && apt-get install -y --no-install-recommends mongodb-org \
  && rm -rf /var/lib/apt/lists/*
 
 RUN export DOWNLOAD_URL="http://dl.ubnt.com/unifi/5.7.20/unifi_sysvinit_all.deb" \
