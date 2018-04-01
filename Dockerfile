@@ -23,7 +23,8 @@ RUN export DOWNLOAD_URL="http://dl.ubnt.com/unifi/5.7.20/unifi_sysvinit_all.deb"
 ADD start.sh /srv/bin/start.sh
 RUN chmod +x /srv/bin/start.sh
 
-EXPOSE 3478 6789 8080 8081 8443 8843 8880
+EXPOSE 3478/udp
+EXPOSE 6789 8080 8081 8443 8843 8880
 VOLUME /srv/unifi-controller
 
 WORKDIR /srv/unifi-controller
