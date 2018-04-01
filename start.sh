@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Unifi Controller directories
+# UniFi Controller directories
 mkdir -p /srv/unifi-controller/logs
 mkdir -p /srv/unifi-controller/data
 mkdir -p /srv/unifi-controller/run
@@ -11,4 +11,5 @@ ln -s /srv/unifi-controller/logs /usr/lib/unifi/logs
 ln -s /srv/unifi-controller/data /usr/lib/unifi/data
 ln -s /srv/unifi-controller/run  /usr/lib/unifi/run
 
-java -Xmx1024M -jar /usr/lib/unifi/lib/ace.jar start
+# Start UniFi Controller
+java -Xmx1024M -Djava.awt.headless=true -Dfile.encoding=UTF-8 -jar /usr/lib/unifi/lib/ace.jar start
