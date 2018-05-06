@@ -20,7 +20,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14
  && apt-get install -y --no-install-recommends mongodb-org \
  && rm -rf /var/lib/apt/lists/*
 
-RUN export DOWNLOAD_URL="http://dl.ubnt.com/unifi/5.7.20/unifi_sysvinit_all.deb" \
+RUN export DOWNLOAD_URL="http://dl.ubnt.com/unifi/5.7.23/unifi_sysvinit_all.deb" \
  && curl -L ${DOWNLOAD_URL} -o /tmp/unifi-controller.deb \
  && dpkg -i /tmp/unifi-controller.deb \
  && rm -f /tmp/unifi-controller.deb
