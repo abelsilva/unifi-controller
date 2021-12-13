@@ -28,16 +28,16 @@ RUN export DOWNLOAD_URL="https://dl.ubnt.com/unifi/5.14.23/unifi_sysvinit_all.de
  && dpkg -i /tmp/unifi-controller.deb \
  && rm -f /tmp/unifi-controller.deb
 
-RUN export DOWNLOAD_URL="https://dlcdn.apache.org/logging/log4j/2.15.0/apache-log4j-2.15.0-bin.tar.gz" \
+RUN export DOWNLOAD_URL="https://dlcdn.apache.org/logging/log4j/2.16.0/apache-log4j-2.16.0-bin.tar.gz" \
  && curl -L ${DOWNLOAD_URL} -o /tmp/log4j.tar.gz \
  && tar -xzvf /tmp/log4j.tar.gz -C /tmp \
  && rm -rf /usr/lib/unifi/lib/log4j-api-2.12.1.jar \
  && rm -rf /usr/lib/unifi/lib/log4j-core-2.12.1.jar \
  && rm -rf /usr/lib/unifi/lib/log4j-slf4j-impl-2.12.1.jar \
- && cp /tmp/apache-log4j-2.15.0-bin/log4j-api-2.15.0.jar /usr/lib/unifi/lib/log4j-api-2.12.1.jar \
- && cp /tmp/apache-log4j-2.15.0-bin/log4j-core-2.15.0.jar /usr/lib/unifi/lib/log4j-core-2.12.1.jar \
- && cp /tmp/apache-log4j-2.15.0-bin/log4j-slf4j-impl-2.15.0.jar /usr/lib/unifi/lib/log4j-slf4j-impl-2.12.1.jar \
- && rm -rf /tmp/log4j.tar.gz /tmp/apache-log4j-2.15.0-bin
+ && cp /tmp/apache-log4j-2.16.0-bin/log4j-api-2.16.0.jar /usr/lib/unifi/lib/log4j-api-2.12.1.jar \
+ && cp /tmp/apache-log4j-2.16.0-bin/log4j-core-2.16.0.jar /usr/lib/unifi/lib/log4j-core-2.12.1.jar \
+ && cp /tmp/apache-log4j-2.16.0-bin/log4j-slf4j-impl-2.16.0.jar /usr/lib/unifi/lib/log4j-slf4j-impl-2.12.1.jar \
+ && rm -rf /tmp/log4j.tar.gz /tmp/apache-log4j-2.16.0-bin
 
 ADD start.sh /srv/bin/start.sh
 RUN chmod +x /srv/bin/start.sh
