@@ -11,7 +11,7 @@ RUN apt-get update \
         psmisc \
         sudo \
         lsb-release \
-        openjdk-8-jre-headless \
+        openjdk-11-jre-headless \
         jsvc \
         cron \
         libpopt0 \
@@ -36,7 +36,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF505
         mongodb-org-tools \
  && rm -rf /var/lib/apt/lists/*
 
-RUN export DOWNLOAD_URL="https://dl.ubnt.com/unifi/7.1.66/unifi_sysvinit_all.deb" \
+RUN export DOWNLOAD_URL="https://dl.ubnt.com/unifi/7.3.83/unifi_sysvinit_all.deb" \
  && curl -L ${DOWNLOAD_URL} -o /tmp/unifi-controller.deb \
  && dpkg -i /tmp/unifi-controller.deb \
  && rm -f /tmp/unifi-controller.deb
